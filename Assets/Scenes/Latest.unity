@@ -946,7 +946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PoiManager: {fileID: 605650505}
   NumTasks: 10
-  NumInnocents: 1
+  NumInnocents: 15
   InnocentPrefab: {fileID: 121386734423795110, guid: 4fed078624de6a5acabda2428d35db83, type: 3}
   StartPosition: {x: 0, y: 0, z: -25}
 --- !u!1 &963194225
@@ -1046,7 +1046,7 @@ GameObject:
   - component: {fileID: 967471242}
   m_Layer: 8
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
