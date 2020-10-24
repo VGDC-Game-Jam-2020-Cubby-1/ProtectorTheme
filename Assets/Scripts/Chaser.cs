@@ -7,9 +7,9 @@ public class Chaser : MonoBehaviour
 {
     private NavMeshAgent chaser;
 
-    public List<POI> targets;
-    private GameObject chef;
-
+    private GameObject target;
+    private GameObject[] chefs;
+    
     private bool hasTarget;
 
 
@@ -17,7 +17,12 @@ public class Chaser : MonoBehaviour
     void Start()
     {
         chaser = GetComponent<NavMeshAgent>();
-        chef = GameObject.FindGameObjectWithTag("Chef");
+        chefs = GameObject.FindGameObjectsWithTag("Chef");
+        if(chefs == null)
+        {
+            hasTarget = false;
+        }
+        
         
 
         
@@ -32,34 +37,47 @@ public class Chaser : MonoBehaviour
     {   
         if(!hasTarget)
         {
-            chef = GameObject.FindGameObjectWithTag("Chef");
-            hasTarget = true;
+            chaser.destination = ChooseTarget().transform.position;
         }
-
-        if(chef != null)
-        {
-            chaser.SetDestination(chef.transform.position);
-        }   
-
     
 
     }
+
     private void OnTriggerEnter(Collider other) 
     {
-        Debug.Log(other.tag);
+        // Debug.Log(other.tag);
         if(other.tag == "Chef")
         {
             Kill(other);
-
         }
     }
-    void ChooseTarget()
+    private GameObject ChooseTarget()
     {
+      
+        chefs = GameObject.FindGameObjectsWithTag("Chef");
+        GameObject closestChef = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+
+        foreach (GameObject chef in chefs) {
+            Vector3 diff = chef.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance) {
+                closestChef = chef;
+                distance = curDistance;
+            }
+        }
+        
+        return closestChef;
+        
         
     }
 
+    //TODO: Needs Cooldown
     private void Kill(Collider other){
+    
         Debug.Log("Kill" + other);
         Destroy(other.gameObject);
+        hasTarget = false;
     }
 }
