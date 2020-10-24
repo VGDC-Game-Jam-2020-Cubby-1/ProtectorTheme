@@ -11,6 +11,6 @@ public class POI : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawSphere(transform.position, 1);
+        Gizmos.DrawSphere(transform.position, .5f);
     }
 }
