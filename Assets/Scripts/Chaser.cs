@@ -15,6 +15,7 @@ public class Chaser : MonoBehaviour
 
     private Shake shake;
 
+    public GameObject chefParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -85,7 +86,11 @@ public class Chaser : MonoBehaviour
         {
             Debug.Log("Kill" + other);
             Destroy(other.gameObject);
+            
             shake.CamShake();
+
+            Instantiate(chefParticles, other.transform.position, Quaternion.identity);
+
             hasTarget = false;
             killCooldown = 5f;
         }

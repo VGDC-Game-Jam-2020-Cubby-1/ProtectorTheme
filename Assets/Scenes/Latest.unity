@@ -1914,6 +1914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killCooldown: 5
+  chefParticles: {fileID: 2580450269853261075, guid: 81f970721ef6df04db93f690f114219a, type: 3}
 --- !u!1 &1731716920
 GameObject:
   m_ObjectHideFlags: 0
