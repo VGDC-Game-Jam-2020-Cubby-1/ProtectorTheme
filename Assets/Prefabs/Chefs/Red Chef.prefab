@@ -119,6 +119,24 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f9198d188fb5ce443bdac29acf44373e, type: 3}
   - {fileID: 8300000, guid: ab5011ce1682bbf4b80df33405664c1f, type: 3}
   - {fileID: 8300000, guid: 818f98b3498488448bf033c655ce985d, type: 3}
+--- !u!114 &530195585668355293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5152838063593480913}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.92521805, b: 0.4867925, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!114 &7433653615787261854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42fb301fbcc595b28737b25acc55c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dance: 0
   chefColor: Red
 --- !u!1001 &4038930197244416401
 PrefabInstance:

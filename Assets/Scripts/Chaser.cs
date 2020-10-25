@@ -18,6 +18,7 @@ public class Chaser : MonoBehaviour
     private AudioSource[] screamFX;
 
     private Chef chefScript;
+    private Outline outline;
 
     void Start()
     {
@@ -78,7 +79,10 @@ public class Chaser : MonoBehaviour
                 distance = curDistance;
             }
         }
+
         chefScript = closestChef.GetComponent<Chef>();
+        outline = closestChef.GetComponent<Outline>();
+        outline.enabled = true;
         Debug.Log(chefScript.chefColor);
 
         return closestChef;
@@ -88,6 +92,7 @@ public class Chaser : MonoBehaviour
     private void Kill(Collider other)
     {
         // Debug.Log("Kill" + other);
+        
         Destroy(other.gameObject);
 
         target = null;

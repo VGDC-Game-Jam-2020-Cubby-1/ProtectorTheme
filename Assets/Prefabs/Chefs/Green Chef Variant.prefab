@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: chefColor
       value: Green
       objectReference: {fileID: 0}
+    - target: {fileID: 6959160668006890813, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8945464942353549240, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
