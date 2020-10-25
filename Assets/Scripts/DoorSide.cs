@@ -14,6 +14,6 @@ public class DoorSide : MonoBehaviour
 
     public void SetOpen(bool isOpen)
     {
-        animator.SetBool(ANIMATOR_ISOPEN, !isOpen);
+        animator.SetBool(ANIMATOR_ISOPEN, isOpen);
     }
 }

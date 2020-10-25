@@ -20,7 +20,7 @@ public class Door : MonoBehaviour
 
         // play sound
 
-        NavMeshObstacle.SetActive(isOpen);
+        NavMeshObstacle.SetActive(!isOpen);
     }
 
     void Update()
