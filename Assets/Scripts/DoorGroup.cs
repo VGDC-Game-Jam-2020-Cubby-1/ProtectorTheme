@@ -24,9 +24,4 @@ public class DoorGroup : Doorable
             door.SetOpen(isOpen);
         }
     }
-
-    public void TestPrint()
-    {
-        Debug.Log("adslkibfdsalkjbhadslkihadsbn");
-    }
 }
