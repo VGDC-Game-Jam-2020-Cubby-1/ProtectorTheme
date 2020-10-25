@@ -8,18 +8,18 @@ public class PlaySound : MonoBehaviour
     public AudioClip SoundToPlay;
     public float volume;
 
-    AudioSource audio;
+    AudioSource audioSrc;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void PlaySoundFX()
     {
-        audio.Play();
+        audioSrc.Play();
     }
 }

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class Doorable : MonoBehaviour
 {
+    public AudioClip doorSFX;
+    public AudioClip cantOpenSFX;
+    private AudioSource audioSrc;
+
     public bool ROIsOpen = true;
     private bool _IsOpen;
     protected bool IsOpen
@@ -40,6 +44,8 @@ public abstract class Doorable : MonoBehaviour
 
         IsOpen = true;
 
+        audioSrc = gameObject.GetComponent<AudioSource>();
+
         // var is_group = GetComponent<DoorGroup>() != null;
         // var has_group = GetComponentInParent<DoorGroup>() != null;
         // var button_active = is_group || !has_group;
@@ -51,14 +57,16 @@ public abstract class Doorable : MonoBehaviour
 
     public void TriggerClosed()
     {
+        Debug.Log("Triggering the Close!");
         Debug.Log("Attempt close");
 
         if (!cooldownTimer.complete)
         {
             Debug.LogFormat("Cannot close door, cooldown has {0} remaining", cooldownTimer.countdown);
+            audioSrc.PlayOneShot(cantOpenSFX);
             return;
         }
-
+        audioSrc.PlayOneShot(doorSFX);
         IsOpen = false;
         closedTimer.complete = false;
         cooldownTimer.complete = false;

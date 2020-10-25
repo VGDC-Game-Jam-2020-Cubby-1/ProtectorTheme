@@ -9,7 +9,7 @@ public class InnocentManager : MonoBehaviour
     public PoiManager PoiManager;
     public int NumTasks;
     public int NumInnocents;
-    public GameObject InnocentPrefab;
+    public GameObject[] InnocentPrefab;
     public Vector3 StartPosition;
 
     public POI[] GetTasks()
@@ -21,7 +21,8 @@ public class InnocentManager : MonoBehaviour
     {
         for (int x = 0; x < NumInnocents; x++)
         {
-            var innocent = Instantiate(InnocentPrefab, StartPosition, Quaternion.identity);
+            int index = UnityEngine.Random.Range(0, InnocentPrefab.Length);
+            var innocent = Instantiate(InnocentPrefab[index], StartPosition, Quaternion.identity);
             innocent.transform.SetParent(transform);
         }
     }

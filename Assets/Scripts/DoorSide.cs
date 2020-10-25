@@ -20,6 +20,6 @@ public class DoorSide : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(animator.GetBool(ANIMATOR_ISOPEN));
+        // Debug.Log(animator.GetBool(ANIMATOR_ISOPEN));
     }
 }
