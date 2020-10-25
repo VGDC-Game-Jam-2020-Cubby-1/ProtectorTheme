@@ -14,6 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killCooldownTime: 5
   chefParticles: {fileID: 2580450269853261075, guid: 81f970721ef6df04db93f690f114219a, type: 3}
+--- !u!114 &1726828485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31087082774280492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42fb301fbcc595b28737b25acc55c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dance: 0
+  chefColor: 
 --- !u!1001 &271757521675241076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21,9 +35,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2427066147338146317, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2427066147338146317, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
+      propertyPath: outlineColor.g
+      value: 0.37358493
+      objectReference: {fileID: 0}
+    - target: {fileID: -2427066147338146317, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
+      propertyPath: outlineColor.b
+      value: 0.37358493
+      objectReference: {fileID: 0}
     - target: {fileID: 264317715389579093, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 264317715389579093, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 264317715389579093, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.945
+      value: 4.38
       objectReference: {fileID: 0}
     - target: {fileID: 264317715389579093, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
       propertyPath: m_LocalRotation.x
@@ -67,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 264317715389579096, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
       propertyPath: m_Name
-      value: Chaser Variant
+      value: Chaser (2)
       objectReference: {fileID: 0}
     - target: {fileID: 264317715389579096, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
       propertyPath: m_TagString
@@ -87,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8945464942357674360, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 264317715389579099, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}

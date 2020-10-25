@@ -10,18 +10,18 @@ public class Chef : MonoBehaviour
 
     public string chefColor;
 
-    private Innocent innocent;
+    private UnityEngine.AI.NavMeshAgent agent;
     private Animator animator;
 
     void Start()
     {
-        innocent = GetComponent<Innocent>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        animator.SetFloat(ANIMATOR_SPEED, innocent.agent.velocity.magnitude / innocent.agent.speed);
+        animator.SetFloat(ANIMATOR_SPEED, agent.velocity.magnitude / agent.speed);
 
         if (Dance)
         {

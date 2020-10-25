@@ -17,18 +17,22 @@ public class Chaser : MonoBehaviour
 
     private AudioSource[] screamFX;
 
-    private Chef chefScript;
+    private Chef chefTarget;
     private Outline outline;
+    private ImposterManager Manager;
+    private Chef chef;
 
     void Start()
     {
+        Manager = GetComponentInParent<ImposterManager>();
         chaser = GetComponent<NavMeshAgent>();
+        chef = GetComponent<Chef>();
+
         killCooldown = new Timer(killCooldownTime);
-        
+
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
 
         screamFX = GameObject.FindGameObjectWithTag("ScreamSFX").GetComponents<AudioSource>();
-
     }
 
     void Update()
@@ -51,9 +55,34 @@ public class Chaser : MonoBehaviour
         chaser.destination = target.transform.position;
     }
 
+    private int colliderAvoidCounter = 0;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "ImposterAvoid")
+        {
+            Debug.Log("enter");
+            colliderAvoidCounter++;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "ImposterAvoid")
+        {
+            Debug.Log("exit");
+
+            colliderAvoidCounter--;
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
+        if (colliderAvoidCounter > 0)
+        {
+            return;
+        }
+
         if (other.tag != "Chef" || !killCooldown.complete || other.gameObject != target)
         {
             return;
@@ -80,10 +109,15 @@ public class Chaser : MonoBehaviour
             }
         }
 
-        chefScript = closestChef.GetComponent<Chef>();
+        if (closestChef == null)
+        {
+            return null;
+        }
+
+        chefTarget = closestChef.GetComponent<Chef>();
         outline = closestChef.GetComponent<Outline>();
         outline.enabled = true;
-        Debug.Log(chefScript.chefColor);
+        Debug.Log(chefTarget.chefColor);
 
         return closestChef;
     }
@@ -92,7 +126,7 @@ public class Chaser : MonoBehaviour
     private void Kill(Collider other)
     {
         // Debug.Log("Kill" + other);
-        
+
         Destroy(other.gameObject);
 
         target = null;
@@ -105,5 +139,6 @@ public class Chaser : MonoBehaviour
         }
 
         Instantiate(chefParticles, other.transform.position, Quaternion.identity);
+        chef.TriggerDance();
     }
 }
