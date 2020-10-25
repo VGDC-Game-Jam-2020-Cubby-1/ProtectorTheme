@@ -19,6 +19,11 @@ public class Innocent : MonoBehaviour
     private float countdown;
     private Timer timer;
 
+
+    public GameObject taskFxHandler;
+    private TaskFXHandler sfxHandler;
+
+
     public bool IsComplete
     {
         get
@@ -36,6 +41,8 @@ public class Innocent : MonoBehaviour
 
         ChooseTask();
         timer = new Timer(TimeStillToCompleteTask);
+
+        sfxHandler = GetComponent<TaskFXHandler>();
     }
 
     void ChooseTask()
@@ -56,6 +63,7 @@ public class Innocent : MonoBehaviour
     void CompleteTask()
     {
         tasks.RemoveAt(current_task);
+        sfxHandler.PlayRandomFX();
         ChooseTask();
     }
 

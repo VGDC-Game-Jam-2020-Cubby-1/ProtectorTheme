@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Chef
   - ScreenShake
+  - ScreamSFX
   layers:
   - Default
   - TransparentFX
