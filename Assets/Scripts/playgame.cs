@@ -12,5 +12,10 @@ public class playgame : MonoBehaviour
     {
         Application.Quit();
     }
+    public void credits()
+    {
+    SceneManager.LoadScene(2);
+    }
+
 }
 

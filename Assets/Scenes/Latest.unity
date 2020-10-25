@@ -1036,12 +1036,12 @@ MonoBehaviour:
   NumTasks: 10
   NumInnocents: 10
   InnocentPrefab:
-  - {fileID: 4374162746163242448, guid: 60edaf2f192bbc647ae3ad717d7043fa, type: 3}
-  - {fileID: 5331427732698063186, guid: c5b41d0b4ab7adc4eb5f3a6d9a8d9360, type: 3}
+  - {fileID: 8402336681573320711, guid: 28440b237e17b965eb687e78d113ac33, type: 3}
   - {fileID: 264317715389579096, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
-  - {fileID: 5575933692272739819, guid: 86165229573a96d4badd50cf04d5c4b3, type: 3}
-  - {fileID: 5152838063593480913, guid: 040ae38f8ed60c34cbc240f09f60e542, type: 3}
-  - {fileID: 1851050547883742572, guid: da62c3f5cbc05c244be45e2abb384100, type: 3}
+  - {fileID: 7148532777574329873, guid: bee68ae52147b0091bda2b9267b2e689, type: 3}
+  - {fileID: 880186050694068041, guid: 43f25924470dae930aad0dcb059a03d9, type: 3}
+  - {fileID: 8170803442067592168, guid: 635d64735e9b2a7728f1855a6dce4b5e, type: 3}
+  - {fileID: 3984924323841639397, guid: dfbe48bbcf4f2495c8c43d072f6fecf9, type: 3}
   StartPosition: {x: -1.15, y: 0, z: 4.5}
 --- !u!1 &895845061
 GameObject:

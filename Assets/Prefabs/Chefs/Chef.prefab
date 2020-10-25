@@ -254,7 +254,10 @@ PrefabInstance:
       propertyPath: MaxSpeedBeforeTask
       value: 0.2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 121386734423795114, guid: 4fed078624de6a5acabda2428d35db83, type: 3}
+    - {fileID: 121386734423795109, guid: 4fed078624de6a5acabda2428d35db83, type: 3}
+    - {fileID: 121386734423795108, guid: 4fed078624de6a5acabda2428d35db83, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4fed078624de6a5acabda2428d35db83, type: 3}
 --- !u!1 &264317715389579096 stripped
 GameObject:
