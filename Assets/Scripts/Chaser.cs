@@ -15,12 +15,16 @@ public class Chaser : MonoBehaviour
     private Shake shake;
     public GameObject chefParticles;
 
+    private AudioSource[] screamFX;
+
     void Start()
     {
         chaser = GetComponent<NavMeshAgent>();
         killCooldown = new Timer(killCooldownTime);
-
+        
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+
+        screamFX = GameObject.FindGameObjectWithTag("ScreamSFX").GetComponents<AudioSource>();
     }
 
     void Update()
@@ -85,6 +89,10 @@ public class Chaser : MonoBehaviour
         killCooldown.complete = false;
 
         shake.CamShake();
+        foreach (var fx in screamFX)
+        {
+            fx.Play();
+        }
 
         Instantiate(chefParticles, other.transform.position, Quaternion.identity);
     }

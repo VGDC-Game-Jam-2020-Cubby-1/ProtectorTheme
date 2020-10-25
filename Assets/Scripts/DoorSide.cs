@@ -18,8 +18,8 @@ public class DoorSide : MonoBehaviour
         animator.SetBool(ANIMATOR_ISOPEN, isOpen);
     }
 
-    // void Update()
-    // {
-    //     Debug.Log(animator.GetBool(ANIMATOR_ISOPEN));
-    // }
+    void Update()
+    {
+        // Debug.Log(animator.GetBool(ANIMATOR_ISOPEN));
+    }
 }
