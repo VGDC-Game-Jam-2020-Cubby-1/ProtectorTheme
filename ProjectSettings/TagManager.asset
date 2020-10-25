@@ -8,6 +8,10 @@ TagManager:
   - ScreenShake
   - ScreamSFX
   - Door
+  - InnocentManager
+  - Score
+  - PauseUI
+  - GameOverUI
   layers:
   - Default
   - TransparentFX
