@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DancingChef : MonoBehaviour
 {
-    private Animator animator;
+    [HideInInspector]
+    public Animator animator;
 
     void Start()
     {
@@ -13,6 +14,6 @@ public class DancingChef : MonoBehaviour
 
     void Update()
     {
-        animator.SetTrigger(Chef.ANIMATOR_DANCE);
+        // animator.SetTrigger(Chef.ANIMATOR_DANCE);
     }
 }

@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 263bb3a98e30a1a26916cdcfb155a509, type: 2}
+    - target: {fileID: 8945464942357674360, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 264317715389579092, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
     - {fileID: 264317715389579099, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
@@ -104,6 +108,8 @@ PrefabInstance:
     - {fileID: 438484214956486083, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
     - {fileID: 746417005438844006, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
     - {fileID: 493244585357271002, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
+    - {fileID: 5656674885244189342, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
+    - {fileID: 7101076984440825729, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
 --- !u!1 &2245284823068064321 stripped
 GameObject:
