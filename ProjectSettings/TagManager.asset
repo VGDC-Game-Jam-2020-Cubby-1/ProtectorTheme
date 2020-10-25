@@ -9,6 +9,10 @@ TagManager:
   - ScreamSFX
   - Door
   - ImposterAvoid
+  - InnocentManager
+  - Score
+  - PauseUI
+  - GameOverUI
   layers:
   - Default
   - TransparentFX
