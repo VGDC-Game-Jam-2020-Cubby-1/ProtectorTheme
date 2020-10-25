@@ -2,26 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorGroup : MonoBehaviour
+public class DoorGroup : Doorable
 {
-    public bool IsOpen = true;
     private Door[] Doors;
 
-    void Start()
+    void Awake()
     {
-        Doors = GetComponentsInChildren<Door>();
+        Doors = this.GetComponentsInDirectChildren<Door>();
     }
 
-    void SetOpen(bool isOpen)
+    public override void SetOpen(bool isOpen)
     {
+        if (Doors == null)
+        {
+            Debug.Log("Null Doors");
+            return;
+        }
+
         foreach (Door door in Doors)
         {
-            door.IsOpen = isOpen;
+            door.SetOpen(isOpen);
         }
     }
 
-    void Update()
+    public void TestPrint()
     {
-        SetOpen(IsOpen);
+        Debug.Log("adslkibfdsalkjbhadslkihadsbn");
     }
 }

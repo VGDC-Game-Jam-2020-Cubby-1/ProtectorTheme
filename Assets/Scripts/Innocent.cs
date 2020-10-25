@@ -17,6 +17,7 @@ public class Innocent : MonoBehaviour
     public float RODistance;
     public float ROSpeed;
     private float countdown;
+    private Timer timer;
 
     public bool IsComplete
     {
@@ -34,6 +35,7 @@ public class Innocent : MonoBehaviour
         tasks = new List<POI>(manager.GetTasks());
 
         ChooseTask();
+        timer = new Timer(TimeStillToCompleteTask);
     }
 
     void ChooseTask()
@@ -63,7 +65,7 @@ public class Innocent : MonoBehaviour
         {
             var dest = agent.destination.vector2();
             var pos = transform.position.vector2();
-            return (dest - pos).magnitude;
+            return Vector2.Distance(dest, pos);
         }
     }
 
@@ -77,16 +79,9 @@ public class Innocent : MonoBehaviour
         RODistance = distance_to_task;
         ROSpeed = agent.velocity.magnitude;
 
-        // Debug.LogFormat("{0:f}  {1:f}", distance_to_task, agent.velocity.magnitude);
-        if (distance_to_task < DistanceToTask && agent.velocity.magnitude < MaxSpeedBeforeTask)
+        if (timer.tick(distance_to_task < DistanceToTask && agent.velocity.magnitude < MaxSpeedBeforeTask))
         {
-            if (countdown > 0f)
-            {
-                countdown -= Time.deltaTime;
-                return;
-            }
             CompleteTask();
         }
-        countdown = TimeStillToCompleteTask;
     }
 }

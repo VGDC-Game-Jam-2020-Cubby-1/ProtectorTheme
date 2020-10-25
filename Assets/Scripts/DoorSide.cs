@@ -7,13 +7,19 @@ public class DoorSide : MonoBehaviour
     private Animator animator;
     const string ANIMATOR_ISOPEN = "IsOpen";
 
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
     }
 
     public void SetOpen(bool isOpen)
     {
+        Debug.LogFormat("Set {0}", isOpen);
         animator.SetBool(ANIMATOR_ISOPEN, isOpen);
+    }
+
+    void Update()
+    {
+        Debug.Log(animator.GetBool(ANIMATOR_ISOPEN));
     }
 }
