@@ -12,6 +12,8 @@ public class Chaser : MonoBehaviour
     
     private bool hasTarget;
 
+    public float killCooldown = 5.0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +37,15 @@ public class Chaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+        killCooldown -= Time.deltaTime;
+        Debug.Log(killCooldown);
         if(!hasTarget)
         {
-            chaser.destination = ChooseTarget().transform.position;
+            target = ChooseTarget();
         }
+
+        chaser.destination = target.transform.position;
+        
     
 
     }
@@ -67,7 +74,9 @@ public class Chaser : MonoBehaviour
                 distance = curDistance;
             }
         }
+
         
+        hasTarget = true;
         return closestChef;
         
         
@@ -75,9 +84,12 @@ public class Chaser : MonoBehaviour
 
     //TODO: Needs Cooldown
     private void Kill(Collider other){
-    
-        Debug.Log("Kill" + other);
-        Destroy(other.gameObject);
-        hasTarget = false;
+        if(killCooldown <= 0f && target == other)
+        {
+            Debug.Log("Kill" + other);
+            Destroy(other.gameObject);
+            hasTarget = false;
+        }
+        
     }
 }
