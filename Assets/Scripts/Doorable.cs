@@ -57,8 +57,7 @@ public abstract class Doorable : MonoBehaviour
 
     public void TriggerClosed()
     {
-        Debug.Log("Triggering the Close!");
-        Debug.Log("Attempt close");
+        // Debug.Log("Attempt close");
 
         if (!cooldownTimer.complete)
         {

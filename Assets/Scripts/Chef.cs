@@ -5,7 +5,8 @@ using UnityEngine;
 public class Chef : MonoBehaviour
 {
     const string ANIMATOR_SPEED = "Speed";
-    const string ANIMATOR_DANCE = "Dance";
+    public const string ANIMATOR_DANCE = "Dance";
+    public bool Dance;
 
     public string chefColor;
 
@@ -21,6 +22,15 @@ public class Chef : MonoBehaviour
     void Update()
     {
         animator.SetFloat(ANIMATOR_SPEED, innocent.agent.velocity.magnitude / innocent.agent.speed);
+
+        if (Dance)
+        {
+            TriggerDance();
+        }
+    }
+
+    public void TriggerDance()
+    {
         animator.SetTrigger(ANIMATOR_DANCE);
     }
 }
