@@ -7,6 +7,8 @@ public class Chef : MonoBehaviour
     const string ANIMATOR_SPEED = "Speed";
     const string ANIMATOR_DANCE = "Dance";
 
+    public string chefColor;
+
     private Innocent innocent;
     private Animator animator;
 

@@ -17,6 +17,8 @@ public class Chaser : MonoBehaviour
 
     private AudioSource[] screamFX;
 
+    private Chef chefScript;
+
     void Start()
     {
         chaser = GetComponent<NavMeshAgent>();
@@ -25,6 +27,7 @@ public class Chaser : MonoBehaviour
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
 
         screamFX = GameObject.FindGameObjectWithTag("ScreamSFX").GetComponents<AudioSource>();
+
     }
 
     void Update()
@@ -75,6 +78,8 @@ public class Chaser : MonoBehaviour
                 distance = curDistance;
             }
         }
+        chefScript = closestChef.GetComponent<Chef>();
+        Debug.Log(chefScript.chefColor);
 
         return closestChef;
     }
@@ -82,7 +87,7 @@ public class Chaser : MonoBehaviour
     //TODO: Needs Cooldown
     private void Kill(Collider other)
     {
-        Debug.Log("Kill" + other);
+        // Debug.Log("Kill" + other);
         Destroy(other.gameObject);
 
         target = null;

@@ -53,7 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 264317715389579096, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
       propertyPath: m_Name
-      value: Green Chef
+      value: Green Chef Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 493244585357271002, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
+      propertyPath: chefColor
+      value: Green
       objectReference: {fileID: 0}
     - target: {fileID: 8945464942353549240, guid: bc356ce69fe274e69a15a9e28dbad296, type: 3}
       propertyPath: m_Materials.Array.data[0]

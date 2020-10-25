@@ -96,18 +96,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8050291840868352179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5331427732698063186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b42fb301fbcc595b28737b25acc55c46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &859111606451828968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +119,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f9198d188fb5ce443bdac29acf44373e, type: 3}
   - {fileID: 8300000, guid: ab5011ce1682bbf4b80df33405664c1f, type: 3}
   - {fileID: 8300000, guid: 818f98b3498488448bf033c655ce985d, type: 3}
+--- !u!114 &8050291840868352179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331427732698063186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42fb301fbcc595b28737b25acc55c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chefColor: Blue
 --- !u!1001 &3923389751337521682
 PrefabInstance:
   m_ObjectHideFlags: 0
