@@ -13,6 +13,7 @@ public class Chaser : MonoBehaviour
     private Timer killCooldown;
 
     private Shake shake;
+    public GameObject chefParticles;
 
     void Start()
     {
