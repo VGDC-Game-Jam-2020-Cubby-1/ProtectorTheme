@@ -43,19 +43,21 @@ public class Chaser : MonoBehaviour
         {
             target = ChooseTarget();
         }
-
         chaser.destination = target.transform.position;
         
     
 
     }
+    
 
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerStay(Collider other) 
     {
         // Debug.Log(other.tag);
         if(other.tag == "Chef")
         {
+            
             Kill(other);
+        
         }
     }
     private GameObject ChooseTarget()
@@ -75,6 +77,8 @@ public class Chaser : MonoBehaviour
             }
         }
 
+        Debug.Log("Tageting" + closestChef);
+
         
         hasTarget = true;
         return closestChef;
@@ -84,11 +88,12 @@ public class Chaser : MonoBehaviour
 
     //TODO: Needs Cooldown
     private void Kill(Collider other){
-        if(killCooldown <= 0f && target == other)
+        if(killCooldown <= 0f)
         {
             Debug.Log("Kill" + other);
             Destroy(other.gameObject);
             hasTarget = false;
+            killCooldown = 5f;
         }
         
     }
