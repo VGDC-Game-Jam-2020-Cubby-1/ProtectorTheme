@@ -11,8 +11,9 @@ public class Chaser : MonoBehaviour
     private GameObject[] chefs;
     
     private bool hasTarget;
-
     public float killCooldown = 5.0f;
+
+    private Shake shake;
 
 
     // Start is called before the first frame update
@@ -24,14 +25,8 @@ public class Chaser : MonoBehaviour
         {
             hasTarget = false;
         }
-        
-        
 
-        
-
-        // var manager = GetComponentInParent<InnocentManager>();
-        // targets = new List<POI>(manager.GetTasks());
-
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
     }
 
     // Update is called once per frame
@@ -55,9 +50,7 @@ public class Chaser : MonoBehaviour
         // Debug.Log(other.tag);
         if(other.tag == "Chef")
         {
-            
             Kill(other);
-        
         }
     }
     private GameObject ChooseTarget()
@@ -92,6 +85,7 @@ public class Chaser : MonoBehaviour
         {
             Debug.Log("Kill" + other);
             Destroy(other.gameObject);
+            shake.CamShake();
             hasTarget = false;
             killCooldown = 5f;
         }
