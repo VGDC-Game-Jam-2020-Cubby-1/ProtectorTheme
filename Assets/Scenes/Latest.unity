@@ -1110,6 +1110,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1202,6 +1203,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d005d3562c6cd2e4ca395b6cf6c2e62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vol: 0.35
 --- !u!4 &999560263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8425330195892908015, guid: 6a4c08d239c7c16468f24204baefbb33, type: 3}
@@ -2630,6 +2644,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chaser (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6743065343120829319, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
+      propertyPath: outlineColor.g
+      value: 0.37358493
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743065343120829319, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
+      propertyPath: outlineColor.b
+      value: 0.37358493
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743065343120829319, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
+      propertyPath: outlineColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743065343120829319, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
 --- !u!1001 &1842998767
@@ -2686,6 +2716,22 @@ PrefabInstance:
     - target: {fileID: 31087082774280492, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
       propertyPath: m_Name
       value: Chaser (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743065343120829319, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
+      propertyPath: outlineColor.g
+      value: 0.37358493
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743065343120829319, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
+      propertyPath: outlineColor.b
+      value: 0.37358493
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743065343120829319, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
+      propertyPath: outlineColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743065343120829319, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 556ae5ed0a71e7734bcaef22e84d0932, type: 3}
