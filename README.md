@@ -5,6 +5,8 @@ https://dzil123.itch.io/we-will-cook-you
 
 Rival chefs will highlight targeted chefs they intend to kill. Save your chefs by clicking the white buttons within the map to close doors on the killers! See how long you can last before you run out of chefs.
 
+Protect your chefs from being killed by rival chefs!
+
 # Credits
 
 Daniel Zilberleyb - Programmer / Animator
@@ -17,7 +19,7 @@ Joshua Wolfe - Producer / Audio
 
 Roy - Designer / UI / Level Design
 
-Protect your chefs from being killed by rival chefs!
+
 
 
 
