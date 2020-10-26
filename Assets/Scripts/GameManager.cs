@@ -6,81 +6,73 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public int mainMenuScene = 0;
-    public int gameScene = 1;
-
     public float score = 0f;
-    public bool isPaused = false;
 
     private GameObject[] chefs;
-
-    bool gameOver = false;
 
     private TextMeshProUGUI scoreUI;
     private GameObject pauseUI;
     private GameObject gameOverUI;
+    private GameObject pauseButton;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         scoreUI = GameObject.FindGameObjectWithTag("Score").GetComponent<TextMeshProUGUI>();
+        pauseUI = GameObject.FindGameObjectWithTag("PauseUI");
+        gameOverUI = GameObject.FindGameObjectWithTag("GameOverUI");
+        pauseButton = GameObject.FindGameObjectWithTag("PauseButton");
+    }
+
+    void Start()
+    {
         Debug.Log(scoreUI);
-        
+
         scoreUI.text = "Testing..";
 
-        pauseUI = GameObject.FindGameObjectWithTag("PauseUI");
-        pauseUI.SetActive(false);
-        gameOverUI = GameObject.FindGameObjectWithTag("GameOverUI");
         gameOverUI.SetActive(false);
-        isPaused = false;
+        IsPaused = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        score += Time.deltaTime*5;
-        scoreUI.text = "" + (int) score;
+        score += Time.deltaTime * 5;
+        scoreUI.text = "" + (int)score;
 
         chefs = GameObject.FindGameObjectsWithTag("Chef");
-        if(chefs.Length <=0 && !gameOver){
-            gameOver = EndGame();
-        }
-
-    }
-
-    public bool EndGame()
-    {
-        Debug.Log("Game Over!");
-        SceneManager.LoadScene(mainMenuScene);
-        return true;
-    }
-
-    public void ExitGame(){
-        Debug.Log("Exit Game");
-        SceneManager.LoadScene(mainMenuScene);
-    }
-
-    public void RestartGame(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
-    }
-
-    public void PauseGame()
-    {
-        if(!isPaused){
+        if (chefs.Length <= 0 && !gameOverUI.activeInHierarchy)
+        {
             Time.timeScale = 0;
-            pauseUI.SetActive(true);
-            isPaused = true;
-        } else if(isPaused){
-            Time.timeScale = 1;
-            pauseUI.SetActive(false);
-            isPaused = false;
+            gameOverUI.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (IsPaused || gameOverUI.activeInHierarchy)
+            {
+                MainMenu.Menu();
+            }
+            else
+            {
+                IsPaused = true;
+            }
         }
     }
 
-    public void GameOver()
+    private bool _IsPaused;
+
+    public bool IsPaused
     {
-        Time.timeScale = 0;
-        
+        get
+        {
+            return _IsPaused;
+        }
+        set
+        {
+            Time.timeScale = value ? 0 : 1;
+            pauseUI.SetActive(value);
+            pauseButton.SetActive(!value);
+
+            _IsPaused = value;
+        }
     }
 }
