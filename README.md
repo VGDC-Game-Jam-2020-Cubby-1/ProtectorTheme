@@ -3,6 +3,12 @@
 This game was created for the UC Irvine VGDC Game Jam of Fall 2020.  
 https://dzil123.itch.io/we-will-cook-you
 
+Daniel Zilberleyb - Programmer / Animator
+Jorge Torres - 3D Props / Level Designer
+Jeron Artest - Programmer / AudioSFX / Polish
+Joshua Wolfe - Producer / Audio
+Roy - Designer / UI / Level Design
+
 Protect your chefs from being killed by rival chefs!
 
 Rival chefs will highlight targeted chefs they intend to kill. Save your chefs by clicking the white buttons within the map to close doors on the killers! See how long you can last before you run out of chefs.
