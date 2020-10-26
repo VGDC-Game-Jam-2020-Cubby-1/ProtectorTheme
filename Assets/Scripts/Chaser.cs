@@ -95,14 +95,14 @@ public class Chaser : MonoBehaviour
     {
         var chefs = GameObject.FindGameObjectsWithTag("Chef");
         GameObject closestChef = null;
-        float distance = Mathf.Infinity;
+        float distance = 0;
         Vector3 position = transform.position;
 
         foreach (GameObject chef in chefs)
         {
             Vector3 diff = chef.transform.position - position;
             float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
+            if (curDistance > distance)
             {
                 closestChef = chef;
                 distance = curDistance;
