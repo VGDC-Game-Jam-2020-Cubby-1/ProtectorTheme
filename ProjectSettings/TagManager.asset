@@ -13,6 +13,7 @@ TagManager:
   - Score
   - PauseUI
   - GameOverUI
+  - PauseButton
   layers:
   - Default
   - TransparentFX
