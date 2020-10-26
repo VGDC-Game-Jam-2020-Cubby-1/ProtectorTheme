@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         if (chefs.Length <= 0 && !gameOverUI.activeInHierarchy)
         {
             Time.timeScale = 0;
-            gameOverUI.SetActive(false);
+            gameOverUI.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
